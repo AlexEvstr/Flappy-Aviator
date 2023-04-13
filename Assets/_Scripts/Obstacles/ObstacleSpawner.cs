@@ -21,7 +21,7 @@ namespace Evstr.Obstacles
         {
             while (true)
             {
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(1.6f);
                 GameObject obstacle = ObjectPoolObstacle.SharedInstance.GetPooledObject();
                 _yPosition = Random.Range(-_yBoards, _yBoards);
                 if (obstacle != null)
