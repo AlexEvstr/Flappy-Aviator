@@ -12,10 +12,12 @@ namespace Evstr
         public List<GameObject> pooledObstacles;
         public List<GameObject> pooledStarsBonus;
         public List<GameObject> pooledEnemies;
+        public List<GameObject> pooledRockets;
 
         public int amountToPoolObstacle;
         public int amountToPoolStarBonus;
         public int amountToPoolEnemy;
+        public int amountToPoolRocket;
 
         private void Awake()
         {
@@ -24,8 +26,15 @@ namespace Evstr
 
         private void Start()
         {
+            PoolObjects();
+        }
+
+        private void PoolObjects()
+        {
             PoolObstacles();
             PoolStars();
+            PoolEnemy();
+            PoolRocket();
         }
 
         public GameObject GetPooledObjectObstacle()
@@ -67,12 +76,60 @@ namespace Evstr
         private void PoolStars()
         {
             pooledStarsBonus = new List<GameObject>();
-            GameObject obstacle;
+            GameObject star;
             for (int i = 0; i < amountToPoolStarBonus; i++)
             {
-                obstacle = Instantiate(objectToPool[1]);
-                obstacle.SetActive(false);
-                pooledStarsBonus.Add(obstacle);
+                star = Instantiate(objectToPool[1]);
+                star.SetActive(false);
+                pooledStarsBonus.Add(star);
+            }
+        }
+
+        public GameObject GetPooledObjectEnemy()
+        {
+            for (int i = 0; i < amountToPoolEnemy; i++)
+            {
+                if (!pooledEnemies[i].activeInHierarchy)
+                {
+                    return pooledEnemies[i];
+                }
+            }
+            return null;
+        }
+
+        private void PoolEnemy()
+        {
+            pooledEnemies = new List<GameObject>();
+            GameObject enemy;
+            for (int i = 0; i < amountToPoolEnemy; i++)
+            {
+                enemy = Instantiate(objectToPool[2]);
+                enemy.SetActive(false);
+                pooledEnemies.Add(enemy);
+            }
+        }
+
+        public GameObject GetPooledObjectRocket()
+        {
+            for (int i = 0; i < amountToPoolRocket; i++)
+            {
+                if (!pooledRockets[i].activeInHierarchy)
+                {
+                    return pooledRockets[i];
+                }
+            }
+            return null;
+        }
+
+        private void PoolRocket()
+        {
+            pooledRockets = new List<GameObject>();
+            GameObject rocket;
+            for (int i = 0; i < amountToPoolRocket; i++)
+            {
+                rocket = Instantiate(objectToPool[3]);
+                rocket.SetActive(false);
+                pooledRockets.Add(rocket);
             }
         }
     }

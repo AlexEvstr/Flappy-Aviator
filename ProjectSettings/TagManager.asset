@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Score
+  - Star
+  - Enemy
+  - ShotButton
+  - Background
+  - Obstacle
   layers:
   - Default
   - TransparentFX

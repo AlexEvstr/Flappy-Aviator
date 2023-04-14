@@ -8,7 +8,7 @@ namespace Evstr.Player
         private Touch _touch;
         private Rigidbody2D _rigidbody2D;
 
-        private float ForceFlap = 7.0f;
+        public static float ForceFlap = 7.0f;
 
         private void Start()
         {
@@ -17,14 +17,10 @@ namespace Evstr.Player
 
         private void Update()
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                _touch = Input.GetTouch(0);
 
-                if (_touch.phase == TouchPhase.Began)
-                {
-                    _rigidbody2D.velocity = Vector2.up * ForceFlap;
-                }
+                _rigidbody2D.velocity = Vector2.up * ForceFlap;
             }
         }
     }

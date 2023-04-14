@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Evstr.Bonuses
+namespace Evstr
 {
-    public class BonusMovement : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour
     {
-        private float _speed = 2.0f;
+        private float _speed = 10.0f;
 
         private void Update()
         {
             transform.Translate(Vector2.left * _speed * Time.deltaTime);
-            if (transform.position.x < -12.0f)
+            if (transform.position.x < -13.0f)
             {
                 gameObject.SetActive(false);
             }

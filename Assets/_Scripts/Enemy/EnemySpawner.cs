@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Evstr.Bonuses
+namespace Evstr.Enemy
 {
-    public class BonusSpawner : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour
     {
-        private float _xPosition = 12.0f;
+        private float _xPosition = 13.0f;
         private float _yPosition;
         private float _yBoards = 4.0f;
         private float _timeIndex;
@@ -21,14 +21,14 @@ namespace Evstr.Bonuses
         {
             while (true)
             {
-                _timeIndex = Random.Range(10, 15);
+                _timeIndex = Random.Range(5, 10);
                 yield return new WaitForSeconds(_timeIndex);
-                GameObject bonus = ObjectPool.SharedInstance.GetPooledObjectStarBonus();
+                GameObject enemy = ObjectPool.SharedInstance.GetPooledObjectEnemy();
                 _yPosition = Random.Range(-_yBoards, _yBoards);
-                if (bonus != null)
+                if (enemy != null)
                 {
-                    bonus.transform.position = new Vector2(_xPosition, _yPosition);
-                    bonus.SetActive(true);
+                    enemy.transform.position = new Vector2(_xPosition, _yPosition);
+                    enemy.SetActive(true);
                 }
             }
         }
