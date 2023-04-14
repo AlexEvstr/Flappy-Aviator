@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425609781}
-  - component: {fileID: 425609780}
+  - component: {fileID: 425609782}
   m_Layer: 0
   m_Name: ObjectPool
   m_TagString: Untagged
@@ -140,21 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &425609780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425609779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0880268774641d1a6c853a5775ffd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 8900642441928262127, guid: 31faef96439754410b603c020cb2fe18, type: 3}
-  amountToPool: 10
 --- !u!4 &425609781
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +155,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425609782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425609779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc61490639592475aaaff6971051610a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool:
+  - {fileID: 8900642441928262127, guid: 31faef96439754410b603c020cb2fe18, type: 3}
+  - {fileID: 1479569435673607135, guid: 8bb81ea48e7234ad9b52cf71ba7dde55, type: 3}
+  pooledObstacles: []
+  pooledStarsBonus: []
+  pooledEnemies: []
+  amountToPoolObstacle: 4
+  amountToPoolStarBonus: 2
+  amountToPoolEnemy: 0
 --- !u!1 &451620367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846720650}
   - component: {fileID: 1846720649}
+  - component: {fileID: 1846720651}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1481,3 +1488,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846720651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846720648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fd64e80d1d449579451534904ce47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

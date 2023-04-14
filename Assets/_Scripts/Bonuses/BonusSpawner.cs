@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Evstr.Obstacles;
 using UnityEngine;
 
-namespace Evstr.Obstacles
+namespace Evstr
 {
-    public class ObstacleSpawner : MonoBehaviour
+    public class BonusSpawner : MonoBehaviour
     {
-        private float _xPosition = 3.0f;
+        private float _xPosition = 12.0f;
         private float _yPosition;
-        private float _yBoards = 2.7f;
+        private float _yBoards = 4.0f;
 
 
         private void Start()
@@ -22,12 +21,12 @@ namespace Evstr.Obstacles
             while (true)
             {
                 yield return new WaitForSeconds(1.6f);
-                GameObject obstacle = ObjectPool.SharedInstance.GetPooledObjectObstacle();
+                GameObject bonus = ObjectPool.SharedInstance.GetPooledObjectStarBonus();
                 _yPosition = Random.Range(-_yBoards, _yBoards);
-                if (obstacle != null)
+                if (bonus != null)
                 {
-                    obstacle.transform.position = new Vector2(_xPosition, _yPosition);
-                    obstacle.SetActive(true);
+                    bonus.transform.position = new Vector2(_xPosition, _yPosition);
+                    bonus.SetActive(true);
                 }
             }
         }
