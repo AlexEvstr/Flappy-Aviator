@@ -21,7 +21,7 @@ namespace Evstr.Enemy
         {
             while (true)
             {
-                _timeIndex = Random.Range(5, 10);
+                _timeIndex = Random.Range(4, 8);
                 yield return new WaitForSeconds(_timeIndex);
                 GameObject enemy = ObjectPool.SharedInstance.GetPooledObjectEnemy();
                 _yPosition = Random.Range(-_yBoards, _yBoards);

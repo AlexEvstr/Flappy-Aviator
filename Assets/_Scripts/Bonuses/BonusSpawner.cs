@@ -14,14 +14,14 @@ namespace Evstr.Bonuses
 
         private void Start()
         {
-            StartCoroutine(SpawnObstacle());
+            StartCoroutine(SpawnBonus());
         }
 
-        private IEnumerator SpawnObstacle()
+        private IEnumerator SpawnBonus()
         {
             while (true)
             {
-                _timeIndex = Random.Range(10, 15);
+                _timeIndex = Random.Range(5, 10);
                 yield return new WaitForSeconds(_timeIndex);
                 GameObject bonus = ObjectPool.SharedInstance.GetPooledObjectStarBonus();
                 _yPosition = Random.Range(-_yBoards, _yBoards);
